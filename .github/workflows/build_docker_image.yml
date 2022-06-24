@@ -1,4 +1,4 @@
-name: create ccs container
+name: create ccs_build container
 
 on:
   release:
