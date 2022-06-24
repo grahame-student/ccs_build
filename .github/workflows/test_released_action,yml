@@ -1,0 +1,14 @@
+name: Test released ccs_build action
+
+on:
+  workflow_dispatch:
+  
+jobs:
+  test_ccs_build:
+    runs-on: ubuntu-latest
+    name: Test CCS Build
+    steps:
+      - name: CCS Build action step
+        uses: grahame-student/ccs_build@v0.0.1
+        with:
+          args: "--arg1 --arg2 --arg3"
