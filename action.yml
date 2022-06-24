@@ -1,0 +1,9 @@
+name: 'Code Composer Studio Project Builder'
+description: 'GitHub action to build a Code Composer Studio Project'
+author: 'Grahame White'
+runs:
+  using: docker
+  image: Dockerfile
+branding:
+  icon: 'code'
+  colour: 'red'
