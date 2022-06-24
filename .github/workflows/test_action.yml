@@ -7,6 +7,6 @@ jobs:
     name: Test CCS Build
     steps:
       - name: CCS Build action step
-        uses: grahame-student/ccs_build@v1
+        uses: ./
         with:
           args: "--arg1 --arg2 --arg3"
