@@ -1,5 +1,4 @@
-# Use ubuntu as the base image
-FROM ubuntu:22.04
+FROM ubuntu:18.04
 
 
 # Add Code Composer Studio
@@ -8,20 +7,16 @@ ENV INSTALLER_TAR=CCS11.0.0.00012_web_linux-x64.tar.gz
 ENV INSTALLER_PATH=ccs_setup_11.0.0.00012.run
 
 RUN ln -fs /usr/share/zoneinfo/Europe/London /etc/localtime
-RUN sed -i 's/# \(.*multiverse$\)/\1/g' /etc/apt/sources.list
-RUN apt update
-RUN apt --yes upgrade
-RUN apt install --no-install-recommends --yes curl
-# RUN apt install --no-install-recommends --yes apt-utils
-#    apt install -y autoconf libtool build-essential libc6-i386 libusb-0.1-4 libgconf-2-4 && \
-#    apt install -y software-properties-common python2.7 libpython2.7 && \
-#    apt install -y byobu curl git git-lfs htop man unzip vim wget
+RUN sed -i 's/# \(.*multiverse$\)/\1/g' /etc/apt/sources.list && \
+    apt update && \
+    apt --yes upgrade && \
+    apt install --yes apt-utils && \
+    apt install -y autoconf libtool build-essential libc6-i386 libusb-0.1-4 libgconf-2-4 && \
+    apt install -y software-properties-common python2.7 libpython2.7 && \
+    apt install -y byobu curl git git-lfs htop man unzip vim wget
 RUN mkdir /root/Downloads
-# RUN curl -L ${INSTALLER_URL} --output /root/Downloads/${INSTALLER_TAR} --silent && \
-#     tar xf /root/Downloads/${INSTALLER_TAR} --directory /root/Downloads/
-RUN curl -L ${INSTALLER_URL} --output /root/Downloads/${INSTALLER_TAR} --silent
-RUN tar xf /root/Downloads/${INSTALLER_TAR} --directory /root/Downloads/
-
+RUN curl -L ${INSTALLER_URL} --output /root/Downloads/${INSTALLER_TAR} --silent && \
+    tar xf /root/Downloads/${INSTALLER_TAR} --directory /root/Downloads/
 RUN ls -l /root/Downloads
 RUN chmod +x /root/Downloads/${INSTALLER_PATH} && \
     /root/Downloads/${INSTALLER_PATH} --mode unattended --enable-components PF_MSP430 --prefix /opt/ti/ccs1100
