@@ -10,6 +10,7 @@ jobs:
     name: Test CCS Build
     steps:
       - name: CCS Build action step
-        uses: grahame-student/ccs_build@v0.0.1
+        uses: grahame-student/ccs_build@v0.0.2
         with:
-          args: "--arg1 --arg2 --arg3"
+          project-name: test1
+          build-configuration: test2
