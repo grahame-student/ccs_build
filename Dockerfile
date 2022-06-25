@@ -8,13 +8,13 @@ ENV INSTALLER_PATH=ccs_setup_11.0.0.00012.run
 
 RUN ln -fs /usr/share/zoneinfo/Europe/London /etc/localtime
 RUN sed -i 's/# \(.*multiverse$\)/\1/g' /etc/apt/sources.list
-RUN apt update
-RUN apt --yes upgrade
+RUN apt-get update
+RUN apt-get --yes upgrade
 # RUN apt install --yes --no-install-recommends apt-utils
-RUN apt install --yes --no-install-recommends autoconf libtool build-essential libc6-i386 libusb-0.1-4 libgconf-2-4
-RUN apt install --yes --no-install-recommends software-properties-common python2.7 libpython2.7
-RUN apt install --yes --no-install-recommends byobu curl git git-lfs htop man unzip vim wget
-RUN apt clean
+RUN apt-get install --yes --no-install-recommends autoconf libtool build-essential libc6-i386 libusb-0.1-4 libgconf-2-4
+RUN apt-get install --yes --no-install-recommends software-properties-common python2.7 libpython2.7
+RUN apt-get install --yes --no-install-recommends byobu curl git git-lfs htop man unzip vim wget
+RUN apt-get clean
 RUN mkdir /root/Downloads
 RUN curl -L ${INSTALLER_URL} --output /root/Downloads/${INSTALLER_TAR} --silent && \
     tar xf /root/Downloads/${INSTALLER_TAR} --directory /root/Downloads/
