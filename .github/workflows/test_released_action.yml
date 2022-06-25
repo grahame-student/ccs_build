@@ -10,7 +10,7 @@ jobs:
     name: Test CCS Build
     steps:
       - name: CCS Build action step
-        uses: grahame-student/ccs_build@v0.0.2
+        uses: ghcr.io/grahame-student/ccs_build@v0.0.2
         with:
           project-name: test1
           build-configuration: test2
