@@ -8,17 +8,17 @@ ENV INSTALLER_PATH=ccs_setup_11.0.0.00012.run
 
 RUN ln -fs /usr/share/zoneinfo/Europe/London /etc/localtime
 RUN sed -i 's/# \(.*multiverse$\)/\1/g' /etc/apt/sources.list
-RUN apt-get update
-RUN apt-get --yes upgrade
-RUN apt-get install --yes --no-install-recommends autoconf=2.69-11
-RUN apt-get install --yes --no-install-recommends libtool=2.4.6-2
-RUN apt-get install --yes --no-install-recommends build-essential=12.4ubuntu1
-RUN apt-get install --yes --no-install-recommends libc6-i386=2.27-3ubuntu1.6
-RUN apt-get install --yes --no-install-recommends libgconf-2-4=3.2.6-4ubuntu1
-RUN apt-get install --yes --no-install-recommends software-properties-common=0.96.24.32.18
-RUN apt-get install --yes --no-install-recommends curl=7.58.0-2ubuntu3.18
-RUN apt-get install --yes --no-install-recommends unzip=6.0-21ubuntu1.1
-RUN apt-get install --yes --no-install-recommends wget=1.19.4-1ubuntu2.2
+RUN apt-get update && \
+    apt-get --yes upgrade
+RUN apt-get install --yes --no-install-recommends autoconf=2.69-11 \
+                                                  libtool=2.4.6-2 \
+                                                  build-essential=12.4ubuntu1 \
+                                                  libc6-i386=2.27-3ubuntu1.6 \
+                                                  libgconf-2-4=3.2.6-4ubuntu1 \
+                                                  software-properties-common=0.96.24.32.18 \
+                                                  curl=7.58.0-2ubuntu3.18 \
+                                                  unzip=6.0-21ubuntu1.1 \
+                                                  wget=1.19.4-1ubuntu2.2
 RUN apt-get clean
 RUN mkdir /root/Downloads
 RUN curl -L ${INSTALLER_URL} --output /root/Downloads/${INSTALLER_TAR} --silent && \
