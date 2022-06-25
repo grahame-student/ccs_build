@@ -10,7 +10,7 @@ RUN ln -fs /usr/share/zoneinfo/Europe/London /etc/localtime
 RUN sed -i 's/# \(.*multiverse$\)/\1/g' /etc/apt/sources.list
 RUN apt-get update && \
     apt-get --yes upgrade
-RUN apt-get install --yes --no-install-recommends autoconf=2.69-11 && \
+RUN apt-get install --yes --no-install-recommends autoconf=2.69-11 \
                                                   libtool=2.4.6-2
 RUN apt-get install --yes --no-install-recommends build-essential=12.4ubuntu1
 RUN apt-get install --yes --no-install-recommends libc6-i386=2.27-3ubuntu1.6
