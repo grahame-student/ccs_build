@@ -1,5 +1,5 @@
 # Use ubuntu as the base image
-FROM ubuntu:22:04
+FROM ubuntu:22.04
 
 
 # Add Code Composer Studio
