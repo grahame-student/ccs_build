@@ -5,5 +5,6 @@ Docker Action that can build a Code Composer Studio project
 ```yaml
 - uses: grahame-student/ccs_build@v1
   with:
-    args: "--arg1 --arg2 --arg3"
+    project-name: some project
+    build-configuration: Debug
 ```
