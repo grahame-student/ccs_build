@@ -12,7 +12,7 @@ RUN apt-get update
 RUN apt-get --yes upgrade
 RUN apt-get install --yes --no-install-recommends autoconf=2.69-11
 RUN apt-get install --yes --no-install-recommends libtool=2.4.6-2
-RUN apt-get install --yes --no-install-recommends build-essential=2.4ubuntu1
+RUN apt-get install --yes --no-install-recommends build-essential=12.4ubuntu1
 RUN apt-get install --yes --no-install-recommends libc6-i386=2.27-3ubuntu1.6
 RUN apt-get install --yes --no-install-recommends libusb-0.1-4=2:0.1.12-31
 RUN apt-get install --yes --no-install-recommends libgconf-2-4=3.26-4ubuntu1
