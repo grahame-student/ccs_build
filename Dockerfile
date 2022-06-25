@@ -11,7 +11,7 @@ RUN sed -i 's/# \(.*multiverse$\)/\1/g' /etc/apt/sources.list
 RUN apt-get update
 RUN apt-get --yes upgrade
 RUN apt-get install --yes --no-install-recommends autoconf=2.69-11
-RUN apt-get install --yes --no-install-recomends libtool build-essential libc6-i386 libusb-0.1-4 libgconf-2-4
+RUN apt-get install --yes --no-install-recommends libtool build-essential libc6-i386 libusb-0.1-4 libgconf-2-4
 RUN apt-get install --yes --no-install-recommends software-properties-common python2.7 libpython2.7
 RUN apt-get install --yes --no-install-recommends byobu curl git git-lfs htop man unzip vim wget
 RUN apt-get clean
