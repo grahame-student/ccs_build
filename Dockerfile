@@ -11,6 +11,7 @@ RUN ln -fs /usr/share/zoneinfo/Europe/London /etc/localtime
 RUN sed -i 's/# \(.*multiverse$\)/\1/g' /etc/apt/sources.list
 RUN apt update
 RUN apt --yes upgrade
+RUN apt install --no-install-recommends --yes curl
 # RUN apt install --no-install-recommends --yes apt-utils
 #    apt install -y autoconf libtool build-essential libc6-i386 libusb-0.1-4 libgconf-2-4 && \
 #    apt install -y software-properties-common python2.7 libpython2.7 && \
