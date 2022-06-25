@@ -2,9 +2,20 @@
 name: 'Code Composer Studio Project Builder'
 description: 'GitHub action to build a Code Composer Studio Project'
 author: 'Grahame White'
+inputs:
+  project-name:
+    description: 'The CCS project file to build'
+    required: true
+  build-configuration:
+    description: 'The build configuration to use when building'
+    required: false
+    default: 'Debug'
 runs:
   using: docker
   image: Dockerfile
+  args:
+    - ${{ inputs.project-name }}
+    - ${{ inputs.build-configuration }}
 branding:
   icon: 'code'
   colour: 'red'
