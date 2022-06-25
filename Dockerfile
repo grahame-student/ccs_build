@@ -17,8 +17,11 @@ RUN apt install --no-install-recommends --yes curl
 #    apt install -y software-properties-common python2.7 libpython2.7 && \
 #    apt install -y byobu curl git git-lfs htop man unzip vim wget
 RUN mkdir /root/Downloads
-RUN curl -L ${INSTALLER_URL} --output /root/Downloads/${INSTALLER_TAR} --silent && \
-    tar xf /root/Downloads/${INSTALLER_TAR} --directory /root/Downloads/
+# RUN curl -L ${INSTALLER_URL} --output /root/Downloads/${INSTALLER_TAR} --silent && \
+#     tar xf /root/Downloads/${INSTALLER_TAR} --directory /root/Downloads/
+RUN curl -L ${INSTALLER_URL} --output /root/Downloads/${INSTALLER_TAR} --silent
+RUN tar xf /root/Downloads/${INSTALLER_TAR} --directory /root/Downloads/
+
 RUN ls -l /root/Downloads
 RUN chmod +x /root/Downloads/${INSTALLER_PATH} && \
     /root/Downloads/${INSTALLER_PATH} --mode unattended --enable-components PF_MSP430 --prefix /opt/ti/ccs1100
