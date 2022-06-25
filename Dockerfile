@@ -23,9 +23,9 @@ RUN apt-get install --yes --no-install-recommends byobu=5.125-0ubuntu1
 RUN apt-get install --yes --no-install-recommends curl=7.58.0-2ubuntu3.18
 RUN apt-get install --yes --no-install-recommends git=1:2.17.1-1ubuntu0.11
 RUN apt-get install --yes --no-install-recommends git-lfs=2.3.4-1
-RUN apt-get install --yes --no-install-recommends htop=2.1.0-3
+# RUN apt-get install --yes --no-install-recommends htop=2.1.0-3
 RUN apt-get install --yes --no-install-recommends unzip=6.0-21ubuntu1.1
-RUN apt-get install --yes --no-install-recommends vim=2:8.0.1453-1ubuntu1.8
+# RUN apt-get install --yes --no-install-recommends vim=2:8.0.1453-1ubuntu1.8
 RUN apt-get install --yes --no-install-recommends wget=1.19.4-1ubuntu2.2
 RUN apt-get clean
 RUN mkdir /root/Downloads
