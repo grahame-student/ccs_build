@@ -13,6 +13,7 @@ inputs:
 runs:
   using: docker
   image: Dockerfile
+  args: ${{ inputs.project-name }} ${{ inputs.build-configuration }}
 branding:
   icon: 'code'
   colour: 'red'
