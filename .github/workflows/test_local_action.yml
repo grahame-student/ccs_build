@@ -15,4 +15,4 @@ jobs:
         uses: ./
         with:
           project-name: some_project_name
-          build:config: Release
+          build-configuration: Release
