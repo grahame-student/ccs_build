@@ -9,6 +9,9 @@ id
 echo "entry point"
 ls -la
 
+echo "GitHub entry point"
+ls -la /github/workspace/
+
 echo "source directory"
 ls -la "$1"
 
