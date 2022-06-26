@@ -17,7 +17,7 @@ inputs:
     default: 'Debug'
 runs:
   using: 'docker'
-  image: 'docker://ghcr.io/grahame-student/ccs_build:v0.0.15-b'
+  image: 'docker://ghcr.io/grahame-student/ccs_build:v0.0.15-c'
   args:
     - ${{ inputs.project-path }}
     - ${{ inputs.project-name }}
