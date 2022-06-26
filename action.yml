@@ -6,7 +6,7 @@ inputs:
   project-path:
     description: ''
     required: true
-    default: 'src'
+    default: '/src/'
   project-name:
     description: 'The CCS project file to build'
     required: true
