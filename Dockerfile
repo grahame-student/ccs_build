@@ -45,8 +45,7 @@ CMD ["/bin/bash"]
 RUN mkdir /workspace
 
 # Area for ccs project
-VOLUME  /workdir
-WORKDIR /workdir
+RUN mkdir /workdir
 
 # Copy the script used to build a CCS project to the filesystem path `/` of the container
 COPY build_project.sh /build_project.sh
