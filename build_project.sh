@@ -1,23 +1,26 @@
 #!/bin/sh -l
 
-echo build_project.sh has been run with the following arguments
+echo "build_project.sh has been run with the following arguments"
 echo "$@"
 
-echo permissions
+echo "permissions"
 id
 
-echo working directory
+echo "entry point"
 ls -la
 
-echo installation dir
+echo "source directory"
+ls -la "$1"
+
+echo "installation dir"
 ls -la /opt/ti/ccs1100/ccs
 
-echo import project into workspace
-echo /opt/ti/ccs1100/ccs/eclipse -noSplash -data "/workspace" -application com.ti.ccstudio.apps.projectImport -ccs.location "./$1/"
+echo "import project into workspace"
+echo "/opt/ti/ccs1100/ccs/eclipse -noSplash -data "/workspace" -application com.ti.ccstudio.apps.projectImport -ccs.location "./$1/""
 echo 
 /opt/ti/ccs1100/ccs/eclipse -noSplash -data "/workspace" -application com.ti.ccstudio.apps.projectImport -ccs.location "./$1/"
 
-echo build project
-echo /opt/ti/ccs1100/ccs/eclipse -noSplash -data "/workspace" -application com.ti.ccstudio.apps.projectBuild  -ccs.projects "./$2/" --ccs.configuration "$3"
+echo "build project"
+echo "/opt/ti/ccs1100/ccs/eclipse -noSplash -data "/workspace" -application com.ti.ccstudio.apps.projectBuild  -ccs.projects "./$2/" --ccs.configuration "$3""
 echo
 /opt/ti/ccs1100/ccs/eclipse -noSplash -data "/workspace" -application com.ti.ccstudio.apps.projectBuild  -ccs.projects "./$2/" --ccs.configuration "$3"
