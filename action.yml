@@ -6,10 +6,11 @@ inputs:
   project-path:
     description: ''
     required: true
-    default: 'src'
+    default: '/workdir'
   project-name:
     description: 'The CCS project file to build'
     required: true
+    default: 'project'
   build-configuration:
     description: 'The build configuration to use when building'
     required: false
