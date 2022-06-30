@@ -3,9 +3,7 @@ Docker Action that can build a Code Composer Studio project
 
 ## Example usage
 ```yaml
-- uses: grahame-student/ccs_build@v0.0.14
+- uses: grahame-student/ccs_build@v0.0.18
   with:
-    protoct-path: src
-    project-name: some project
     build-configuration: Debug
 ```
