@@ -6,10 +6,7 @@ inputs:
   project-path:
     description: ''
     required: true
-    default: '/src/'
-  project-name:
-    description: 'The CCS project file to build'
-    required: true
+    default: '/./'
   build-configuration:
     description: 'The build configuration to use when building'
     required: false
@@ -19,7 +16,6 @@ runs:
   image: 'docker://ghcr.io/grahame-student/ccs_build:v0.0.16'
   args:
     - ${{ inputs.project-path }}
-    - ${{ inputs.project-name }}
     - ${{ inputs.build-configuration }}
 branding:
   icon: 'code'
