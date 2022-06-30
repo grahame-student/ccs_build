@@ -13,7 +13,7 @@ inputs:
     default: 'Debug'
 runs:
   using: 'docker'
-  image: 'docker://ghcr.io/grahame-student/ccs_build:v0.0.19'
+  image: 'docker://ghcr.io/grahame-student/ccs_build:v0.0.20'
   args:
     - ${{ inputs.project-path }}
     - ${{ inputs.build-configuration }}
