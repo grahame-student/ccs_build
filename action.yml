@@ -6,14 +6,14 @@ inputs:
   project-path:
     description: 'Path to the project files'
     required: true
-    default: '/./'
+    default: '/.'
   build-configuration:
     description: 'The build configuration to use when building'
     required: false
     default: 'Debug'
 runs:
   using: 'docker'
-  image: 'docker://ghcr.io/grahame-student/ccs_build:v0.0.16'
+  image: 'docker://ghcr.io/grahame-student/ccs_build:v0.0.19'
   args:
     - ${{ inputs.project-path }}
     - ${{ inputs.build-configuration }}
