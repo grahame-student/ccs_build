@@ -12,6 +12,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: CCS Build action step
-        uses: grahame-student/ccs_build@v0.0.2
+        uses: grahame-student/ccs_build@v0.0.16
         with:
           build-configuration: Debug
