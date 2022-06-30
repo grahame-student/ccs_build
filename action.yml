@@ -6,7 +6,7 @@ inputs:
   project-path:
     description: 'Path to the project files'
     required: true
-    default: '/.'
+    default: './'
   build-configuration:
     description: 'The build configuration to use when building'
     required: false
