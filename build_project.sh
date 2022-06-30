@@ -10,7 +10,7 @@ Check_CCS_Project_Files() {
     file2="$1/.cproject"
     file3="$1/.ccsproject"
 
-    if [ -a $file1 ] && [ -a $file2 ] && [ -a $file3 ]
+    if [ -a "$file1" ] && [ -a "$file2" ] && [ -a "$file3" ]
     then echo "CCS project files found"
     else echo "CCS project files not found" && exit 1
     fi
@@ -21,7 +21,7 @@ Check_CCS_Project_Files() {
 ####################################
 ### Main Action Code Starts Here ###
 ####################################
-Check_CCS_Project_Files $1
+Check_CCS_Project_Files "$1"
 
 echo import project into workspace
 /opt/ti/ccs1100/ccs/eclipse/eclipse -noSplash -data "/home/build/workspace" -application com.ti.ccstudio.apps.projectImport -ccs.location "$1"
