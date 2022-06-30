@@ -17,7 +17,7 @@ RUN apt-get install --yes --no-install-recommends apt-utils=1.6.14 \
                                                   libc6-i386=2.27-3ubuntu1.6 \
                                                   libgconf-2-4=3.2.6-4ubuntu1 \
                                                   software-properties-common=0.96.24.32.18 \
-                                                  curl=7.58.0-2ubuntu3.18 \
+                                                  curl=7.58.0-2ubuntu3.19 \
                                                   unzip=6.0-21ubuntu1.1 \
                                                   wget=1.19.4-1ubuntu2.2
 RUN apt-get clean
