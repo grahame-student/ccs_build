@@ -14,5 +14,4 @@ jobs:
       - name: CCS Build action step
         uses: ./
         with:
-          project-name: some_project_name
           build-configuration: Release
