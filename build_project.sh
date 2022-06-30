@@ -10,7 +10,7 @@ Check_CCS_Project_Files() {
     file2="$1/.cproject"
     file3="$1/.ccsproject"
 
-    if [ -a "$file1" ] && [ -a "$file2" ] && [ -a "$file3" ]
+    if [ -e "$file1" ] && [ -e "$file2" ] && [ -e "$file3" ]
     then echo "CCS project files found"
     else echo "CCS project files not found" && exit 1
     fi
