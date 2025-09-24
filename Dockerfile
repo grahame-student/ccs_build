@@ -36,19 +36,19 @@ RUN mkdir /root/Downloads
 ###################
 ### Install CCS ###
 ###################
-ENV INSTALLER_URL=https://software-dl.ti.com/ccs/esd/CCSv11/CCS_11_0_0/exports/CCS11.0.0.00012_web_linux-x64.tar.gz
-ENV INSTALLER_TAR=CCS11.0.0.00012_web_linux-x64.tar.gz
-ENV INSTALLER_PATH=ccs_setup_11.0.0.00012.run
+ENV INSTALLER_URL=https://dr-download.ti.com/software-development/ide-configuration-compiler-or-debugger/MD-J1VdearkvK/20.3.0/CCS_20.3.0.00014_linux.zip
+ENV INSTALLER_ARC=CCS_20.3.0.00014_linux.zip
+ENV INSTALLER_PATH=CCS_20.3.0.00014_linx/ccs_setup_20.3.0.00014.run
 
 #  download and run CCS installer
-RUN curl -L ${INSTALLER_URL} --output /root/Downloads/${INSTALLER_TAR} --silent && \
-    tar xf /root/Downloads/${INSTALLER_TAR} --directory /root/Downloads/ && \
+RUN curl -L ${INSTALLER_URL} --output /root/Downloads/${INSTALLER_ARC} --silent && \
+    unzip /root/Downloads/${INSTALLER_ARC} --directory /root/Downloads/ && \
     chmod +x /root/Downloads/${INSTALLER_PATH} && \
     /root/Downloads/${INSTALLER_PATH} --mode unattended --enable-components PF_MSP430 --prefix /opt/ti && \
     mkdir -p /home/build/workspace
 
 
-FROM ghcr.io/apollo-fire/ccs-base:v11.0.0 AS install-specific-cgt
+FROM ghcr.io/apollo-fire/ccs-base:v20.3.0 AS install-specific-cgt
 ARG MSP430_CGT_VERSION
 ARG MSP430_CGT_INSTALLER_URL
 
