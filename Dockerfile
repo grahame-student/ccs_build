@@ -41,11 +41,11 @@ ENV INSTALLER_ARC=CCS_20.3.0.00014_linux.zip
 ENV INSTALLER_PATH=CCS_20.3.0.00014_linx/ccs_setup_20.3.0.00014.run
 
 #  download and run CCS installer
-RUN curl -L ${INSTALLER_URL} --output /root/Downloads/${INSTALLER_ARC} --silent && \
-    unzip /root/Downloads/${INSTALLER_ARC} --directory /root/Downloads/ && \
-    chmod +x /root/Downloads/${INSTALLER_PATH} && \
-    /root/Downloads/${INSTALLER_PATH} --mode unattended --enable-components PF_MSP430 --prefix /opt/ti && \
-    mkdir -p /home/build/workspace
+RUN curl -L ${INSTALLER_URL} --output /root/Downloads/${INSTALLER_ARC} --silent
+RUN unzip /root/Downloads/${INSTALLER_ARC} --directory /root/Downloads/
+RUN chmod +x /root/Downloads/${INSTALLER_PATH}
+RUN /root/Downloads/${INSTALLER_PATH} --mode unattended --enable-components PF_MSP430 --prefix /opt/ti
+RUN mkdir -p /home/build/workspace
 
 
 FROM ghcr.io/apollo-fire/ccs-base:v20.3.0 AS install-specific-cgt
