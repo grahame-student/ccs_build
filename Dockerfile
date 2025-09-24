@@ -1,7 +1,7 @@
 #checkov:skip=CKV_DOCKER_3: "Ensure that a user for the container has been created"
 #GitHub actions require that the docker image use the root user
 #https://docs.github.com/en/actions/creating-actions/dockerfile-support-for-github-actions#user
-FROM ubuntu:18.04 as install-ccs
+FROM ubuntu:18.04 AS install-ccs
 
 #################################
 ### Install Required Packages ###
@@ -48,7 +48,7 @@ RUN curl -L ${INSTALLER_URL} --output /root/Downloads/${INSTALLER_TAR} --silent 
     mkdir -p /home/build/workspace
 
 
-FROM ghcr.io/apollo-fire/ccs-base:v11.0.0 as install-specific-cgt
+FROM ghcr.io/apollo-fire/ccs-base:v11.0.0 AS install-specific-cgt
 ARG MSP430_CGT_VERSION
 ARG MSP430_CGT_INSTALLER_URL
 
