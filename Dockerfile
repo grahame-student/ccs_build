@@ -20,6 +20,7 @@ RUN ln -fs /usr/share/zoneinfo/Europe/London /etc/localtime && \
                                                   libgconf-2-4=3.2.6-4ubuntu1 \
                                                   libtool=2.4.6-2 \
                                                   software-properties-common=0.96.24.32.22 \
+                                                  udev \
                                                   unzip=6.0-21ubuntu1.2 \
                                                   wget=1.19.4-1ubuntu2.2 && \
     rm -rf /var/lib/apt/lists/*
