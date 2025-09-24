@@ -38,11 +38,11 @@ RUN mkdir /root/Downloads
 ###################
 ENV INSTALLER_URL=https://dr-download.ti.com/software-development/ide-configuration-compiler-or-debugger/MD-J1VdearkvK/20.3.0/CCS_20.3.0.00014_linux.zip
 ENV INSTALLER_ARC=CCS_20.3.0.00014_linux.zip
-ENV INSTALLER_PATH=CCS_20.3.0.00014_linx/ccs_setup_20.3.0.00014.run
+ENV INSTALLER_PATH=CCS_20.3.0.00014_linux/ccs_setup_20.3.0.00014.run
 
 #  download and run CCS installer
 RUN curl -L ${INSTALLER_URL} --output /root/Downloads/${INSTALLER_ARC} --silent
-RUN unzip /root/Downloads/${INSTALLER_ARC} --directory /root/Downloads/
+RUN unzip /root/Downloads/${INSTALLER_ARC} -d /root/Downloads/
 RUN chmod +x /root/Downloads/${INSTALLER_PATH}
 RUN /root/Downloads/${INSTALLER_PATH} --mode unattended --enable-components PF_MSP430 --prefix /opt/ti
 RUN mkdir -p /home/build/workspace
