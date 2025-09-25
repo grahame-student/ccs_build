@@ -49,7 +49,7 @@ RUN /root/Downloads/${INSTALLER_PATH} --mode unattended --unattendedmodeui none 
 RUN mkdir -p /home/build/workspace
 
 
-FROM ghcr.io/apollo-fire/ccs-base:v20.3.0 AS install-specific-cgt
+FROM ghcr.io/grahame-student/ccs-base:v20.3.0 AS install-specific-cgt
 ARG MSP430_CGT_VERSION
 ARG MSP430_CGT_INSTALLER_URL
 
